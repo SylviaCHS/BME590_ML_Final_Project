@@ -5,7 +5,7 @@ import json
 
 
 def image_batch():
-    for i in range(500):   # 1265):
+    for i in range(400, 410):   # 1265):
         num = str(i + 1).zfill(4)
         filename = 'tuberculosis-phone-' + str(num) + '.json'
         img_name = 'tuberculosis-phone-' + str(num) + '.jpg'
@@ -57,7 +57,7 @@ def crop_non_tb(img, num):
         non_tb_img = Image.fromarray(non_tb_img)
         save = check_TB_region(non_tb_img)
 
-        img_name = ('./Non_TB_Image/nonTB_Image_{}_{}.jpeg'.format(num, i))
+        img_name = ('./Non-TB_Image/nonTB_Image_{}_{}.jpg'.format(num, i))
         if save == bool(1):
             print('Non-TB cropped image saved')
             non_tb_img.save(img_name)
